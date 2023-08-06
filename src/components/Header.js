@@ -6,11 +6,12 @@ import { FaBuysellads } from "react-icons/fa";
 
 
 import { Link } from "react-router-dom";
+import { useCartContext } from "../contexts/CartContext";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const { setIsOpen, isOpen } = useSidebarContext();
-
+  const {setSepetIcon} = useCartContext
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -34,7 +35,7 @@ const Header = () => {
         >
           <BsBag className="text-2xl" />
           <div className="bg-red-500 absolute -right-2 top-4 text-[12px] h-[15px] w-[15px] rounded-full flex justify-center items-center text-white p-2">
-            1
+            {setSepetIcon}
           </div>
         </div>
       </div>

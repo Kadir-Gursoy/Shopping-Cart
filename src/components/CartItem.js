@@ -52,7 +52,7 @@ const CartItem = ({ item }) => {
 
             <div className="flex-1 flex justify-around items-center">$ {price}</div>
             <div className="flex-1 flex justify-end items-center text-primary font-medium">
-              109
+           {(price * amount).toFixed(1)}
             </div>
           </div>
         </div>
