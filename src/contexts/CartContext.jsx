@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {createContext, useContext, useEffect, useState } from 'react';
 
 const CartContext = createContext()
 
@@ -16,7 +16,7 @@ const CartProvider = ({ children }) => {
     setSepetIcon(sumAmount)
 
         const total = cart.reduce((acc, currentItem)=>{
-            return acc + currentItem.price * currentItemamount
+            return acc + currentItem.price * currentItem.amount
         },0)
         setTotal(total)
 
@@ -47,21 +47,26 @@ const decreaseAmount = (id) => {
     const existingItemIndex = cart.findIndex(item => item.id === id)
     const newCart = [...cart]
     if (newCart[existingItemIndex].amount === 1) {
-        deleteFromCart(id)
+        deleteFromCard(id)
     } else {
         newCart[existingItemIndex].amount -= 1
         setCart(newCart)
     }
 
 }
-}
-        const deleteFromCard = (id) => {
-         setCart(cart.filter((item=> item.id !==id)))
-   
-}
-    const values = { addToCart, cart, increaseAmount, decreaseAmount, deleteFromCard, setSepetIcon }
-    return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
 
+        const deleteFromCard = (id) => {
+         setCart(cart.filter(item=> item.id !==id))
+}   
+
+
+    const clearCart = () => {
+    setCart([])
+}
+const values = { addToCart,  cart,  increaseAmount, decreaseAmount, deleteFromCard,   setSepetIcon, clearCart,   total}
+return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
+
+}
 
 
 export default CartProvider;

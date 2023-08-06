@@ -39,7 +39,7 @@ const Product = ({item}) => {
       </div>
       <div >
         <div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
-       <Link to={`/product/4534`}>
+       <Link to={`/product/${id}`}>
         <h2 className="font-semibold mb-1">{title}</h2>
        </Link>
         <div className="font-semibold">$ {price}</div>
