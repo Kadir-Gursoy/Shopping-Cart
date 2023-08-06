@@ -13,15 +13,19 @@ const CartProvider = ({ children }) => {
 
         if (existingItemIndex !== -1) {
             const newCart = [...cart]
-            newCart[existingItemIndex].amount += 1
+            newCart[existingItemIndex].amount =+ 1
             setCart(newCart)
         } else {
             setCart([...cart, newItem])
         }
     }
+         
+const increaseAmount = (id) => {
+const updateItem = cart.find(item=> item.id === id)
+addToCart(updateItem.id)
+}
 
-
-    const values = { addToCart,cart }
+    const values = { addToCart,cart, increaseAmount }
     return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
 };
 
