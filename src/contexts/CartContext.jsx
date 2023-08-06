@@ -25,9 +25,23 @@ const updateItem = cart.find(item=> item.id === id)
 addToCart(updateItem.id)
 }
 
-    const values = { addToCart,cart, increaseAmount }
+
+const decreaseAmount = () => {
+    const existingItemIndex = cart.findIndex(item => item.id === id)
+    
+        const newCart = [...cart]
+        const amount = newCart[existingItemIndex].amount 
+        amount > 1 ? (newCart[existingItemIndex].amount  -=1 ) :
+        setCart(newCart)
+    } 
+}
+const deleteFromCard = (id) => {
+    const updateCart = cart.filter((item=> item.id !==id))
+    setCart(upodate)
+}
+    const values = { addToCart,cart, increaseAmount, decreaseAmount, deleteFromCard }
     return <CartContext.Provider value={values}>{children}</CartContext.Provider>;
-};
+
 
 
 export default CartProvider;
