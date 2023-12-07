@@ -13,7 +13,7 @@ const Home = () => {
         <button
         onClick={filterAllProducts}
           type="button"
-          className="inline-block rounded-full border-4 border-[#f5e6e0b9] px-6 pb-[6px] pt-2 text-sm font-medium uppercase text-primary transition duration-300 ease-in-out  hover:bg-[#f5e6e0b9] "
+          className="inline-block rounded-full border-5 border-[#f5e6e0b9] px-6 pb-[6px] pt-2 text-sm font-medium uppercase text-primary transition duration-300 ease-in-out  hover:bg-[#f5e6e0b9] "
         >
           All
         </button>
@@ -23,7 +23,7 @@ const Home = () => {
           onClick={()=>filterProducts(item)}
           key={index}
             type="button"
-            className="inline-block rounded-full border-4 border-[#f5e6e0b9] px-6 pb-[6px] pt-2 text-sm font-medium uppercase text-primary transition duration-300 ease-in-out  hover:bg-[#f5e6e0b9] "
+            className="inline-block rounded-full border-5 border-[#f5e6e0b9] px-6 pb-[6px] pt-2 text-sm font-medium uppercase text-primary transition duration-300 ease-in-out  hover:bg-[#f5e6e0b9] "
           >
             {item}
           </button>
